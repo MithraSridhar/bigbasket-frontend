@@ -10,7 +10,7 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  //useSelector((state)) => state.reducerNAme.SliceName  or state.reducerNAme.SliceName-initialvaluename
+  //useSelector((state)) => state.reducerName.SliceName  or state.reducerNAme.SliceName-initialvaluename
   //We use useSelector to select the state we want
 
   const loading = useSelector((state) => state.itemShop.loading);

@@ -13,7 +13,7 @@ function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const cartItems = useSelector((state) => state.itemShop.cartItems);
+  const cartItems= useSelector((state) => state.itemShop.cartItems);
   console.log(cartItems);
   useEffect(() => {
     axios
