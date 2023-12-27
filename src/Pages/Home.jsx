@@ -13,7 +13,7 @@ function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const cartItems= useSelector((state) => state.itemShop.cartItems);
+  const cartItems = useSelector((state) => state.itemShop.cartItems);
   console.log(cartItems);
   useEffect(() => {
     axios
@@ -39,7 +39,7 @@ function Home() {
           justifyContent: "end",
           alignItems: "flex-end",
           marginTop: "20px",
-          marginRight:"40px"
+          marginRight: "40px",
         }}
       >
         <button

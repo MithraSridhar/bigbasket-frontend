@@ -20,15 +20,19 @@ const itemSlice = createSlice({
       console.log(state.loading);
     },
     addToCart: (state, action) => {
-      let newData = state.cartItems.push({data: action.payload ,quantity:1 })
-      console.log(newData)
+      let newData = state.cartItems.push(action.payload);
+      console.log(newData);
     },
-    updateCart:(state,action)=>{
-      state.cartItems.map((item)=>
-      item._id===action.payload._id ? {...item,quantity:action.payload.quantity} : item)
-    }
+    updateCart: (state, action) => {
+      state.cartItems.map((item) =>
+        item._id === action.payload._id
+          ? { ...item, quantity: action.payload.quantity }
+          : item
+      );
+    },
   },
 });
 
-export const { showLoading, hideLoading, addToCart } = itemSlice.actions;
+export const { showLoading, hideLoading, addToCart, updateCart } =
+  itemSlice.actions;
 export default itemSlice.reducer;
