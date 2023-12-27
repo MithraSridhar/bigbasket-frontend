@@ -1,17 +1,19 @@
 import React from "react";
 import { Button, Card } from "antd";
 import { useDispatch, useSelector } from "react-redux";
+import {addToCart} from "../redux/ItemSlice"
 const { Meta } = Card;
+
 
 function Item({ item }) {
   const dispatch = useDispatch();
-  const addToCart = () => {
+  const handleAddCart = (item) => {
     console.log("Add to Cart");
-    const payload = dispatch({ type: "addToCart", payload: { ...item } });
+   // const payload = dispatch({ type: "addToCart", payload: { ...item } , quantity: 1});
+   const payload=  dispatch(addToCart(item))
     console.log(payload);
   };
-  // const cartItems  = useSelector((state)=>state.itemShop.cartItems)
-  // console.log(cartItems)
+
   return (
     <div>
       <Card
@@ -31,7 +33,7 @@ function Item({ item }) {
       >
         <Meta title={item.name} />
         <h4>Price: Rs.{item.price}</h4>
-        <Button type="primary" onClick={() => addToCart()}>
+        <Button type="primary" onClick={() => handleAddCart(item)}>
           Add to Cart
         </Button>
       </Card>

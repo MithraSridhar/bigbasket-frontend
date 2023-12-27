@@ -20,8 +20,13 @@ const itemSlice = createSlice({
       console.log(state.loading);
     },
     addToCart: (state, action) => {
-      state.cartItems = [...state.cartItems, action.payload];
+      let newData = state.cartItems.push({data: action.payload ,quantity:1 })
+      console.log(newData)
     },
+    updateCart:(state,action)=>{
+      state.cartItems.map((item)=>
+      item._id===action.payload._id ? {...item,quantity:action.payload.quantity} : item)
+    }
   },
 });
 
